@@ -1,12 +1,13 @@
 from flask import Flask
-from app.users import view_users
-from app.products import view_products
-from app import home
+
+from app import home_bp
+from app.products import products_bp
+from app.users import users_bp
 
 app = Flask(__name__)
-view_users(app)
-view_products(app)
-home(app)
+app.register_blueprint(home_bp)
+app.register_blueprint(products_bp)
+app.register_blueprint(users_bp)
 
 
 if __name__ == "__main__":
