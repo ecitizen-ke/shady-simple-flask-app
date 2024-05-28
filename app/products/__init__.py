@@ -1,14 +1,3 @@
-from flask import jsonify
+from flask import jsonify, Blueprint
 
-
-def view_products(myapp):
-    @myapp.route("/products")
-    def products():
-        product_lists = [
-            {
-                "fruits": ["Apples", "Avocado", "Banana"],
-                "bevarages": ["Club soda", "Coke", "Juice"],
-            }
-        ]
-
-        return jsonify(product_lists)
+products_bp = Blueprint("products_bp", __name__)

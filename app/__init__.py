@@ -1,4 +1,8 @@
-def home(myapp):
-    @myapp.route("/")
-    def index():
-        return "<h1>Index Page</h1>"
+from flask import Blueprint
+
+home_bp = Blueprint("home_bp", __name__)
+
+
+@home_bp.route("/")
+def index():
+    return "<h1>Index Page</h1>"
